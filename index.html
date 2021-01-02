@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giveaway Bot!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="hero">
+        <div class="navbar">
+            <img src="images/BX8j8h8l4E6mQAAAABJRU5ErkJggg.png" class="logo"> 
+            <div class="user">
+                <button type="button">Dashboard</button>
+                <img src="images/circle-cropped (1).png">
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="info">
+                <h1>COMING SOON</h1>
+                <p>This website is still under construction. Please come back later!</p>
+                <input type="text" placeholder="Search">
+            </div>
+        </div>
+
+        <div class="slider">
+            <img src="images/left-arrow.png" id="prev">
+            <div class="preview">
+                <img src="images/small1.png" class="active thumbnail">
+                <img src="images/small2.png" class="thumbnail">
+                <img src="images/small3.png" class="thumbnail">
+                <img src="images/small4.png" class="thumbnail">
+                <img src="images/small5.png" class="thumbnail">
+            </div>
+            <img src="images/right-arrow.png" id="next">
+        </div>
+    </div>
+
+    <script>
+
+        var prev = document.getElementById("prev");
+        var next = document.getElementById("next");
+        var thumbnail = document.getElementsByClassName("thumbnail");
+        var hero = document.getElementById("hero");
+
+        var backgroundImg = new Array(
+            "images/bg1.png",
+            "images/bg2.png",
+            "images/bg3.png",
+            "images/bg4.png",
+            "images/bg5.png"
+        );
+        let i = 0;
+        next.onclick = function () {
+
+            if (i < 4) {
+                hero.style.backgroundImage = 'url("' + backgroundImg[i + 1] + '")';
+                hero.style.transition = "all 2s";
+                thumbnail[i+1].classList.add("active")
+                thumbnail[i].classList.remove("active")
+                i++;
+            }
+
+        }
+        prev.onclick = function () {
+
+            if (i > 0) {
+                hero.style.backgroundImage = 'url("' + backgroundImg[i - 1] + '")';
+                hero.style.transition = "all 2s";
+                thumbnail[i-1].classList.add("active")
+                thumbnail[i].classList.remove("active")
+                i--;
+            }
+
+        }
+    </script>
+</body>
+
+</html>
